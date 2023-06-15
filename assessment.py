@@ -85,8 +85,12 @@ class Recipe:
         else:
             return f"{meal} is not found"
         
-
-
+appOne = Recipe()
+appOne.add_recipes("Pilau", ["rice","meat", "spices"], "2hrs", "Energy giving")
+appOne.add_recipes("Pilau", ["rice","meat", "spices"], "2hrs", "Energy giving")
+appOne.remove_recipe("Pilau")
+appOne.display_recipe("Pilau")
+appOne.display_recipe("Pizza")
 
 # **Wildlife Preservation:** You're a wildlife conservationist working on a
 # program to track different species in a national park. Each species has its own
@@ -106,12 +110,18 @@ class PreyOrPredator(Wildlife):
     def __init__(self, diet, lifespan, migrationPatterns):
         super().__init__(diet, lifespan, migrationPatterns)
         # self.animal_status = animal
-        self.prey = {}
+        self.prey = {"cat":"Prey"}
     def status(self,status , animal):
         if animal in self.prey :
             return f"{animal} is a prey"
         else:
             return f"{animal} is a predator"
+        
+tsavo = PreyOrPredator("Carnivore", range(30), "Tsavo_north to Tsavo_south")
+tsavo.status("prey", "Lion")
+tsavo.status("prey", "cat")
+
+
 
 # Create a class called Product with attributes for name, price, and quantity.
 # Implement a method to calculate the total value of the product (price * quantity).
@@ -132,3 +142,9 @@ sugar = Product("rice", 400, 5)
 print(sugar.total_value)
 pepper = Product("rice", 600, 6)
 print(pepper.total_value)
+
+# Implement a class called Student with attributes for name, age, and grades (a
+# list of integers). Include methods to calculate the average grade, display the
+# student information, and determine if the student has passed (average grade >=
+# 60). Create objects for the Student class and demonstrate the usage of these
+# methods.
